@@ -1,13 +1,12 @@
 ﻿^ContentPage { 
     background-color: #a96538; 
-    padding: 15; 
-
+    padding: 10; 
 }
 
 ^Button {
-    font-size: 16;
+    font-size: 12;
     color: #a96538;
-    margin: 5 0;
+    margin: 0;
 }
 
 ^Button.primary {
@@ -16,12 +15,11 @@
 }
 
 #LoginBox { 
-    border-radius: 5; 
-    background-color: #fff; 
-    padding: 15
+    border-radius: 15;
+    background-color: #fff;
 }
 
-
-^Entry {
-    Height: 40;
+^Entry { 
+    height: 40; 
+    color: #666;
 }

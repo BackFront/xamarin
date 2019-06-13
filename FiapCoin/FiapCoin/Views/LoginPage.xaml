@@ -20,26 +20,17 @@
             <StackLayout 
                 StyleId="LoginBox"
                 VerticalOptions="CenterAndExpand" 
-                Margin="10" StyleClass="bg">
-                <Image Source="icon.png"></Image>
+                Margin="10">
+            <Image Source="icon.png"></Image>
+            <Entry  Placeholder="Email"  Text="{Binding Usuario.Email, Mode=TwoWay}">
+            </Entry>
 
-                <Entry 
-                    Placeholder="Email" 
-                    Text="{Binding Usuario.Email, Mode=TwoWay}"
-                                     >
-                    <local:ExtendedEntry.Behaviors>
-                        <behavior:EmailValidationBehavior />
-                    </local:ExtendedEntry.Behaviors>
-                </Entry>
-
-                <Entry Placeholder="Senha" HorizontalOptions="FillAndExpand"
-                                     IsPassword="True"
-                                     Text="{Binding Usuario.Senha, Mode=TwoWay}"
-                                     HeightRequest="40">
-                    <local:ExtendedEntry.Behaviors>
-                        <behavior:CampoObrigadorioBehavior />
-                    </local:ExtendedEntry.Behaviors>
-                </Entry>
+            <Entry 
+                Placeholder="Senha" 
+                HorizontalOptions="FillAndExpand"
+                IsPassword="True"
+                Text="{Binding Usuario.Senha, Mode=TwoWay}">
+            </Entry>
 
                 <Button
                     x:Name="btnEntrar"  
