@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:vm="clr-namespace:FiapCoin.ViewModel"
+    xmlns:local="clr-namespace:FiapCoin.CustomRender"
+    xmlns:behavior="clr-namespace:FiapCoin.Behavior"
+    x:Class="FiapCoin.Views.LoginPage">
+
+    <ContentPage.Resources>
+        <StyleSheet Source="../Assets/main.css" />
+    </ContentPage.Resources>
+
+    <ContentPage.BindingContext>
+        <vm:LoginViewModel></vm:LoginViewModel>
+    </ContentPage.BindingContext>
+
+    <!--<StackLayout StyleId="LoginForm">-->
+    <Frame>
+            <StackLayout 
+                StyleId="LoginBox"
+                VerticalOptions="CenterAndExpand" 
+                Margin="10" StyleClass="bg">
+                <Image Source="icon.png"></Image>
+
+                <Entry 
+                    Placeholder="Email" 
+                    Text="{Binding Usuario.Email, Mode=TwoWay}"
+                                     >
+                    <local:ExtendedEntry.Behaviors>
+                        <behavior:EmailValidationBehavior />
+                    </local:ExtendedEntry.Behaviors>
+                </Entry>
+
+                <Entry Placeholder="Senha" HorizontalOptions="FillAndExpand"
+                                     IsPassword="True"
+                                     Text="{Binding Usuario.Senha, Mode=TwoWay}"
+                                     HeightRequest="40">
+                    <local:ExtendedEntry.Behaviors>
+                        <behavior:CampoObrigadorioBehavior />
+                    </local:ExtendedEntry.Behaviors>
+                </Entry>
+
+                <Button
+                    x:Name="btnEntrar"  
+                    Text="Entrar" 
+                    StyleClass="primary"
+                    Command="{Binding EntrarClickedCommand}" />
+
+                <Label Text=""></Label>
+
+
+                <local:CustomButton x:Name="btnScannear"  
+                                    CustomBorderColor="#a96538"  
+                                    CustomBackgroundColor="#FFFFFF"  
+                                    Text="Scannear Acesso" 
+                                    TextColor="#a96538"  
+                                    Command="{Binding ScannerClickedCommand}"  
+                                    CustomBorderRadius="4"  
+                                    CustomBorderWidth="4"  
+                                    VerticalOptions="Center"/>
+                
+            </StackLayout>
+        </Frame>
+    <!--</StackLayout>-->
+</ContentPage>

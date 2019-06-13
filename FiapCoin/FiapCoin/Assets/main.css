@@ -1,0 +1,27 @@
+﻿^ContentPage { 
+    background-color: #a96538; 
+    padding: 15; 
+
+}
+
+^Button {
+    font-size: 16;
+    color: #a96538;
+    margin: 5 0;
+}
+
+^Button.primary {
+    background-color: #a96538;
+    color: #fff;
+}
+
+#LoginBox { 
+    border-radius: 5; 
+    background-color: #fff; 
+    padding: 15
+}
+
+
+^Entry {
+    Height: 40;
+}
